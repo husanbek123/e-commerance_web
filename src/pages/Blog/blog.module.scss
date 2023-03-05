@@ -1,0 +1,113 @@
+.blog {
+  width: 100%;
+  padding: 2% 0px;
+  h1{
+    width: 90%;
+    margin: 0 auto;
+    color: inherit;
+  }
+  .cards1 {
+    width: 80%;
+    margin: 0 auto;
+    height: 60vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .card1 {
+      background: url(https://s3-alpha-sig.figma.com/img/4f20/9703/9f007a65100f49fab1c9464d032b6c06?Expires=1678665600&Signature=VRfuNnjH2P6BwdCkGQWUKA~FQiU82EQGOZsJSz4~xdHMtCBDpSpYbu397Rf-8U40uCpV~c3bNYHafT2C-rgz3gHELu3rrNDpzU~G3YE9uUPBTLclA34PIJyS11MKTI1VVz06~BaqHvcRZC3X6l7xhkmGIwDSjBU0ivdL2WZHcGNxc0Zz9N6RsikM72cyCm2PX27yFPjujI5m~NGvRefYadY5t~eKMnCHGh5EinzgwHFJzzsOxKCOBDI9r03qmD9LrDLSssXiVpxvyLr~iAFlkQKIO4Sgeq4c9uSEfaCtFo0BZwzlgIkBPjXQTLNGVYCTanPZ3RBkVErAoy3AmBAdJw__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4);
+      height: 400px;
+      width: 590px;
+      border-radius: 12px;
+      background-size: 100% 100%;
+      padding: 15px;
+      position: relative;
+      p:nth-child(1){
+        font-size: 16px;
+        font-weight: 400;
+        color: rgb(0, 129, 0);
+        background-color: white;
+        display: inline-block;
+        padding: 0px 10px;
+        border-radius: 5px;
+      }
+      .absolut {
+        color: white;
+        font-size: 22px;
+        font-weight: 600;
+        letter-spacing:2px;
+        margin: 0;
+        position: absolute;
+        bottom: 80px;
+      }
+      .user{
+        width: 100%;
+        position: absolute;
+        bottom: 0;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        img{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+        }
+        p{
+            font-size: 16px;
+            color: white;
+            bottom: 0;
+            span{
+                padding-right: 20px;
+            }
+        }
+      }
+    }
+    .card01 {
+        background: url(https://s3-alpha-sig.figma.com/img/1dc2/b3b5/7aa1cdcc990600d294fee51400dac478?Expires=1678665600&Signature=HbGwlJvHc1~YYJ~CTaI0ryCVr0rLBcfvbjBt~Icx33SW9NEMr2OKXscp~1v5IaNG~JUiZiVh7Sy1ie4oT0twnoigN-Qdr2UXi7sVmnu4fFTcpOZZTJHOZgVTG~0P10xcbRg5Kt9TywzGkvV9vWxGbGtqdvzqUh~0N8tHOiSIeJAw-HjL4kg6zViBBbQS9IEIAGUUH6yux93h0YiZkbx-tPxD7FgGEljPm7V8BiLccXKmlebxUsQyZKvWCbPz-l6vhoRgp7umGd8T2aMjDH-0dngPESSzhphtgNwZYq24ZJ7Zg~5Stjwi6avlWhIhMuo3XPpXUJzqhp0tumM8z6hlfg__&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4);
+        height: 400px;
+        width: 590px;
+        border-radius: 12px;
+        background-size: 100% 100%;
+        padding: 15px;
+        position: relative;
+        p:nth-child(1){
+          font-size: 16px;
+          font-weight: 400;
+          color: rgb(0, 129, 0);
+          background-color: white;
+          display: inline-block;
+          padding: 0px 10px;
+          border-radius: 5px;
+        }
+        .absolut {
+          color: white;
+          font-size: 22px;
+          font-weight: 600;
+          letter-spacing:2px;
+          margin: 0;
+          position: absolute;
+          bottom: 80px;
+        }
+        .user{
+          width: 100%;
+          position: absolute;
+          bottom: 0;
+          display: flex;
+          align-items: center;
+          gap: 20px;
+          img{
+              width: 50px;
+              height: 50px;
+              border-radius: 50%;
+          }
+          p{
+              font-size: 16px;
+              color: white;
+              bottom: 0;
+              span{
+                  padding-right: 20px;
+              }
+          }
+        }
+      }
+  }
+}
