@@ -24,13 +24,13 @@ root.render(
   <React.StrictMode>
     <BrowserRouter>
       <QueryClientProvider client={queryClient}>
-        <ContextProvider>
-          <KarzinaProvider>
+        <KarzinaProvider>
+          <ContextProvider>
             {/* <UserProvider> */}
-              <App />
+            <App />
             {/* </UserProvider> */}
-          </KarzinaProvider>
-        </ContextProvider>
+          </ContextProvider>
+        </KarzinaProvider>
       </QueryClientProvider>
     </BrowserRouter>
   </React.StrictMode>

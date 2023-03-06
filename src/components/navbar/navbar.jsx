@@ -3,6 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import { TemaContext } from "../context/temaContext";
 import c from "../navbar/navbar.module.scss";
 import { Button, Dropdown } from "antd";
+// import { KarzinaContext } from "../context/karzina";
 
 function Navbar({ karzina, mode }) {
   const { tema, setTema } = useContext(TemaContext);
@@ -15,7 +16,7 @@ function Navbar({ karzina, mode }) {
           // target="_blank"
           href="#"
         >
-          1st menu item
+          Bakery
         </a>
       ),
     },
@@ -26,18 +27,73 @@ function Navbar({ karzina, mode }) {
           // target="_blank"
           href="#"
         >
-          2nd menu item
+          Fruit and vegetables
         </a>
       ),
     },
     {
-      key: "3",
+      key: "4",
       label: (
         <a
           // target="_blank"
           href="#"
         >
-          3rd menu item
+          Meat and fish
+        </a>
+      ),
+    },
+    {
+      key: "5",
+      label: (
+        <a
+          // target="_blank"
+          href="#"
+        >
+          Drinks
+        </a>
+      ),
+    },
+    {
+      key: "6",
+      label: (
+        <a
+          // target="_blank"
+          href="#"
+        >
+          Kitchen
+        </a>
+      ),
+    },
+    {
+      key: "7",
+      label: (
+        <a
+          // target="_blank"
+          href="#"
+        >
+          Special nutrition
+        </a>
+      ),
+    },
+    {
+      key: "8",
+      label: (
+        <a
+          // target="_blank"
+          href="#"
+        >
+          Baby
+        </a>
+      ),
+    },
+    {
+      key: "9",
+      label: (
+        <a
+          // target="_blank"
+          href="#"
+        >
+          Pharmacy
         </a>
       ),
     },
@@ -67,6 +123,9 @@ function Navbar({ karzina, mode }) {
             </li>
           </ul>
           <ul className={c.ul2}>
+          <li>
+              <NavLink to={"/home"}>Home</NavLink>
+            </li>
             <li>
               <NavLink to={"/about"}>About As</NavLink>
             </li>
@@ -83,7 +142,18 @@ function Navbar({ karzina, mode }) {
             <NavLink to={"/"}>Freshnesecom</NavLink>
           </div>
           <form className={c.forma}>
-            <p>AllCategories</p>
+            <Dropdown
+              className={c.allDrop}
+              menu={{
+                items,
+              }}
+              placement="bottom"
+              arrow
+            >
+              <Button>
+                AllCategories <i class="fa-solid fa-chevron-down"></i>
+              </Button>
+            </Dropdown>
             <label>
               <input
                 type="text"
@@ -103,80 +173,6 @@ function Navbar({ karzina, mode }) {
             </NavLink>
           </div>
         </nav>
-        <div className={c.categ}>
-          <Dropdown
-            menu={{
-              items,
-            }}
-            placement="bottom"
-            arrow
-          >
-            <Button>Bakery <i class="fa-solid fa-chevron-down"></i></Button>
-          </Dropdown>
-          <Dropdown
-            menu={{
-              items,
-            }}
-            placement="bottom"
-            arrow
-          >
-            <Button>Fruit and vegetables <i class="fa-solid fa-chevron-down"></i></Button>
-          </Dropdown>
-          <Dropdown
-            menu={{
-              items,
-            }}
-            placement="bottom"
-            arrow
-          >
-            <Button>Meat and fish <i class="fa-solid fa-chevron-down"></i></Button>
-          </Dropdown>
-          <Dropdown
-            menu={{
-              items,
-            }}
-            placement="bottom"
-            arrow
-          >
-            <Button>Drinks <i class="fa-solid fa-chevron-down"></i></Button>
-          </Dropdown>
-          <Dropdown
-            menu={{
-              items,
-            }}
-            placement="bottom"
-            arrow
-          >
-            <Button>Kitchen <i class="fa-solid fa-chevron-down"></i></Button>
-          </Dropdown>
-          <Dropdown
-            menu={{
-              items,
-            }}
-            placement="bottom"
-            arrow
-          >
-            <Button>Special nutrition <i class="fa-solid fa-chevron-down"></i></Button>
-          </Dropdown>
-          <Dropdown
-            menu={{
-              items,
-            }}
-            placement="bottom"
-            arrow
-          >
-            <Button>Baby <i class="fa-solid fa-chevron-down"></i></Button>
-          </Dropdown>
-          <Dropdown
-            menu={{
-              items,
-            }}
-            placement="bottom"
-            arrow
-          >
-            <Button>Pharmacy <i class="fa-solid fa-chevron-down"></i></Button>
-          </Dropdown>
-        </div>
       </header>
     </div>
   );

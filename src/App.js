@@ -14,6 +14,7 @@ import Karzina from "./pages/Karzina/karzina";
 function App() {
   const { tema, setTema } = useContext(TemaContext);
   const [karzina, setKarzina] = useState([]);
+  console.log(karzina);
   return (
     <div className="App">
       <Layout mode={tema} karzina={karzina}>
@@ -21,11 +22,14 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/category" element={<Category set={setKarzina}/>} />
-          <Route path="/blog" element={<Blog />} />
-          {/* <Route path="/singl" element={<Singl />} /> */}
+          <Route path="/category" element={<Category />} />
+          <Route path="/blog" element={<Blog set={setKarzina} />} />
+          <Route path="/category/:id" element={<Singl />} />
           <Route path="/blog/:id" element={<SinglBlog />} />
-          <Route path="/karzina" element={<Karzina products={karzina} set={setKarzina}/>} />
+          <Route
+            path="/karzina"
+            element={<Karzina blog={karzina} set={setKarzina} />}
+          />
         </Routes>
       </Layout>
     </div>
