@@ -1,35 +1,64 @@
-.kar{
-    width: 100%;
-    padding: 2% 0px;
-    .cars{
-        width: 90%;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 20px;
-        flex-wrap: wrap;
-        .car{
-            width: 30%;
-            padding: 10px;
-            border: 2px solid gainsboro;
-            border-radius: 5px;
-            img{
-                border-radius: 10px 10px 0px 0px;
-                width: 100%;
-              }
-              p{
-                font-size: 18px;
-                font-weight: 600;
-                color: inherit;
-                text-transform: capitalize;
-        
-                span{
-                  font-size: 22px;
-                  color: inherit;
-                  padding-right: 10px;
-                }
-              }
+.kar {
+  width: 100%;
+  padding: 2% 0px;
+  .cars {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    .car {
+      width: 30%;
+      padding: 10px;
+      border: 2px solid gainsboro;
+      border-radius: 5px;
+      img {
+        border-radius: 10px 10px 0px 0px;
+        width: 100%;
+      }
+      p {
+        font-size: 18px;
+        font-weight: 600;
+        color: inherit;
+        text-transform: capitalize;
+
+        span {
+          font-size: 22px;
+          color: inherit;
+          padding-right: 10px;
         }
+      }
     }
+  }
+}
+@media (max-width: 1080px) {
+  .kar {
+    .cars {
+      .car {
+        width: 40%;
+      }
+    }
+  }
+}
+@media (max-width: 800px) {
+  .kar {
+    .cars {
+      align-items: center;
+      justify-content: center;
+      .car {
+        width: 50%;
+      }
+    }
+  }
+}
+@media (max-width: 600px) {
+  .kar {
+    .cars {
+      .car {
+        width: 100%;
+      }
+    }
+  }
 }

@@ -2,14 +2,28 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useDataFetch } from "../../components/hooks/getData";
 import c from "../Blog/blog.module.scss";
+import { Audio } from "react-loader-spinner";
 
 function Blog({ set }) {
-  const allProducts = useDataFetch(["products"], "/products");
+  const { data: posts, isLoading } = useDataFetch(["products"], "/products");
+  console.log(posts, "post log");
+  if (isLoading) {
+    return <Audio
+        height="80"
+        width="80"
+        radius="9"
+        color="green"
+        ariaLabel="loading"
+        wrapperStyle
+        wrapperClass
+      />;
+  }
   return (
     <div className={c.blog}>
       <h1>Fruit and vegetables</h1>
+      
       <div className={c.cards1}>
-        <div className={c.card1}>
+        {/* <div className={c.card1}>
           <p>tag</p>
           <p className={c.absolut}>
             This is a space for your blog
@@ -26,7 +40,7 @@ function Blog({ set }) {
               <span>Author</span>05.03.2023
             </p>
           </div>
-        </div>
+        </div> */}
         <div className={c.card01}>
           <p>tag</p>
           <p className={c.absolut}>
@@ -47,7 +61,7 @@ function Blog({ set }) {
         </div>
       </div>
       <div className={c.wrapper}>
-        {allProducts?.data?.data?.map((w) => (
+        {posts?.data?.map((w) => (
           <div className={c.card}>
             <img src="https://picsum.photos/300/350" alt="rasm" />
             <p>

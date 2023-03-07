@@ -1,4 +1,4 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -7,9 +7,53 @@
   scroll-behavior: smooth;
   font-family: sans-serif;
 }
-.App{
+.App {
   margin-top: 10%;
 }
-button{
+button {
   cursor: pointer;
+}
+#chek {
+  display: none;
+}
+#chek:checked ~ ul {
+  left: 0;
+}
+#chek:checked ~ .outbar {
+  display: block;
+}
+@media (max-width: 1210px) {
+  .App {
+    margin-top:13%;
+  }
+}
+@media (max-width: 1080px) {
+  .App {
+    margin-top:7%;
+  }
+}
+@media (max-width: 900px) {
+  .App {
+    margin-top: 25%;
+  }
+}
+@media (max-width: 632px) {
+  .App {
+    margin-top: 30%;
+  }
+}
+@media (max-width: 500px) {
+  .App {
+    margin-top: 43%;
+  }
+}
+@media (max-width: 400px) {
+  .App {
+    margin-top: 50%;
+  }
+}
+@media (max-width: 340px) {
+  .App {
+    margin-top: 60%;
+  }
 }
