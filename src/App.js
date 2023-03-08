@@ -19,10 +19,10 @@ function App() {
     <div className="App">
       <Layout mode={tema} karzina={karzina}>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/home" element={<Home />} />
+          <Route path="/" element={<Home set={setKarzina}/>} />
+          <Route path="/home" element={<Home set={setKarzina}/>} />
           <Route path="/about" element={<About />} />
-          <Route path="/category" element={<Category />} />
+          {/* <Route path="/category" element={<Category />} /> */}
           <Route path="/blog" element={<Blog set={setKarzina} />} />
           <Route path="/category/:id" element={<Singl />} />
           <Route path="/blog/:id" element={<SinglBlog />} />

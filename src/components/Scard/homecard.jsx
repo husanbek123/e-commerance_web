@@ -5,7 +5,7 @@ import c from './homecard.module.scss'
 
 
 
-export default function Scard() {
+export default function Scard({set}) {
     const { data, isLoading } = useQueryHook({ url: '/products' });
     if (isLoading) {
         return (
@@ -26,7 +26,7 @@ export default function Scard() {
                     <i>-{e.discount} USZ</i>
                     <div className={c.price}>
                         <h5>{e.price} UZS</h5>
-                        <button>Buy now</button>
+                        <button onClick={() => set((a) => [...a, e])}>Buy now</button>
                     </div>
                 </div>
                 // </Link>

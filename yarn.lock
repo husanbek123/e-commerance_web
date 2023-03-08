@@ -6647,7 +6647,7 @@ no-case@^3.0.4:
 
 node-bin-setup@^1.0.0:
   version "1.1.3"
-  resolved "https://registry.yarnpkg.com/node-bin-setup/-/node-bin-setup-1.1.3.tgz#d45d5220e3b2ecc3a94263a56116f727f6c1bb14"
+  resolved "https://registry.npmjs.org/node-bin-setup/-/node-bin-setup-1.1.3.tgz"
   integrity sha512-opgw9iSCAzT2+6wJOETCpeRYAQxSopqQ2z+N6BXwIMsQQ7Zj5M8MaafQY8JMlolRR6R1UXg2WmhKp0p9lSOivg==
 
 node-forge@^1:
@@ -6667,7 +6667,7 @@ node-releases@^2.0.8:
 
 node@^19.6.1:
   version "19.6.1"
-  resolved "https://registry.yarnpkg.com/node/-/node-19.6.1.tgz#489c22209b09181194e7a34fe20dd60a266f1dcb"
+  resolved "https://registry.npmjs.org/node/-/node-19.6.1.tgz"
   integrity sha512-byYg3LxtFgNG0vINZMk4iX3Aa7p8Uc3t3WOQfZMwXcIiCzSTOXNbPOEmbrTSI73yrrfhr6IsutbLnN+/PBSaSA==
   dependencies:
     node-bin-setup "^1.0.0"
@@ -9388,6 +9388,18 @@ typedarray-to-buffer@^3.1.5:
   integrity sha512-zdu8XMNEDepKKR+XYOXAVPtWui0ly0NtohUscw+UmaHiAWT8hrV1rr//H6V+0DvJ3OQ19S979M0laLfX8rm82Q==
   dependencies:
     is-typedarray "^1.0.0"
+
+uikit-react@^3.1.3:
+  version "3.1.3"
+  resolved "https://registry.yarnpkg.com/uikit-react/-/uikit-react-3.1.3.tgz#88682f23028053229d94b25947af87b08a8879c1"
+  integrity sha512-vy3Xk0Mw6KisSchN3d4Nzm5w+vbFRdC+grEC1xm7EKXDLLJjX3Hdy+z5w1CoVTk/KlSNQCLT974Xq3kiCJx8Iw==
+  dependencies:
+    classnames "^2.2.5"
+
+uikit@^3.16.4:
+  version "3.16.4"
+  resolved "https://registry.npmjs.org/uikit/-/uikit-3.16.4.tgz"
+  integrity sha512-t2HUTdSr0Jf0nvcXcmIKkLFSN0cD+IK/e2he27mqe5WGhabvDaD0lG9aDlGgRQSlMO/89o4WakhufDPKtXa1KA==
 
 unbox-primitive@^1.0.2:
   version "1.0.2"
