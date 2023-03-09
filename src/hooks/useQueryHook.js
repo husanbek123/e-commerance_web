@@ -7,7 +7,8 @@ const useQueryHook = ({url, options, params, onSelect}) => {
     [url],
     async () => {
       const response = await instance.get(url, { params });
-      return onSelect ? onSelect(response) : response;
+      // return onSelect ? onSelect(response) : response;
+      return response
     },
     {
       ...options,

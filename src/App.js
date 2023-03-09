@@ -28,7 +28,7 @@ function App() {
           <Route path="/blog/:id" element={<SinglBlog />} />
           <Route
             path="/karzina"
-            element={<Karzina blog={karzina} set={setKarzina} />}
+            element={<Karzina blog={karzina} home={karzina} set={setKarzina} />}
           />
         </Routes>
       </Layout>
