@@ -1,56 +1,68 @@
 import React from "react";
-import c from "../footer/footer.module.scss"
-function Footer() {
+import { useDataFetch } from "../hooks/getData.js";
+import "../../App.css";
+import cl from "./footer.module.scss";
+export const Footer = () => {
+  let { data } = useDataFetch(["information"], "/information");
+  const infoData = data?.data[0];
   return (
     <div>
-      <footer>
-        <div className={c.sec1}>
-          <h1>Get in touch</h1>
-          <ul>
-            <li>
-              <a href="/about">About Us</a>
-              <a href="#">Careers</a>
-              <a href="#">Press Releases</a>
-              <a href="/Blog">Blog</a>
-            </li>
-          </ul>
-        </div>
-        <div className={c.sec1}>
-          <h1>Connections</h1>
-          <ul>
-            <li>
-              <a href="https://www.facebook.com/">Facebook</a>
-              <a href="https://twitter.com/">Twitter</a>
-              <a href="https://www.instagram.com/_aziz3007/">Instagram</a>
-              <a href="https://www.youtube.com/">Youtube</a>
-            </li>
-          </ul>
-        </div>
-        <div className={c.sec1}>
-          <h1>Earnings</h1>
-          <ul>
-            <li>
-              <a href="#">Become an Affiliate</a>
-              <a href="#">Advertise your product</a>
-              <a href="#">nimadir</a>
-              <a href="#">Sell on Market</a>
-            </li>
-          </ul>
-        </div>
-        <div className={c.sec1}>
-          <h1>Account</h1>
-          <ul>
-            <li>
-              <a href="#">Your account</a>
-              <a href="#">Returns Centre</a>
-              <a href="#">Chat with us</a>
-              <a href="#">Help</a>
-            </li>
-          </ul>
+      <footer className={cl.footer}>
+        <div className={cl.container}>
+          <div className={cl.footer__wrapper}>
+            <div className={cl.footer__info}>
+              <a className={cl.footer__folder}>
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/3082/3082383.png"
+                  width={30}
+                />
+                <p>address:{infoData?.address}</p>
+              </a>
+              <a
+                href={`https://${infoData?.email}`}
+                className={cl.footer__folder}
+              >
+                <img
+                  src="https://cdn0.iconfinder.com/data/icons/apple-apps/100/Apple_Mail-512.png"
+                  width={30}
+                />
+                <p>email:{infoData?.email}</p>
+              </a>
+              <a href={infoData?.telegram} className={cl.footer__folder}>
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Telegram_logo.svg/480px-Telegram_logo.svg.png"
+                  alt=""
+                  width={30}
+                />
+                <p>telegram:{infoData?.telegram}</p>
+              </a>
+              <a href={infoData?.instagram} className={cl.footer__folder}>
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/Instagram_logo_2016.svg/768px-Instagram_logo_2016.svg.png"
+                  alt=""
+                  width={30}
+                />
+                <p>instagram:{infoData?.instagram}</p>
+              </a>
+              <a href={`tel:+${infoData?.phone}`} className={cl.footer__folder}>
+                <img
+                  src="https://cdn-icons-png.flaticon.com/512/725/725624.png"
+                  alt=""
+                  width={30}
+                />
+                <p>Phone :{infoData?.phone}</p>
+              </a>
+            </div>
+            <div
+              className={cl.map}
+              dangerouslySetInnerHTML={{ __html: infoData?.addressMap }}
+            ></div>
+          </div>
+          <p className={cl.text}>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi
+          </p>
         </div>
       </footer>
     </div>
   );
-}
-
-export default Footer;
+};

@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "../navbar/navbar";
-import Footer from "../footer/footer";
+import { Footer } from "../footer/footer";
 import { TemaContext } from "../context/temaContext";
 import { useContext } from "react";
 import { KarzinaContext } from "../context/karzina";
