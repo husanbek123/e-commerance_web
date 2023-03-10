@@ -17,6 +17,7 @@ import { Error } from "./pages/Error";
 function App() {
   const { tema, setTema } = useContext(TemaContext);
   const [karzina, setKarzina] = useState([]);
+  
   console.log(karzina);
   return (
     <div className="App">
@@ -26,6 +27,7 @@ function App() {
           <Route path="/home" element={<Home set={setKarzina} />} />
           <Route path="/about" element={<About />} />
           <Route path="/blog" element={<Blog set={setKarzina} />} />
+          <Route path="category" />
           <Route path="/category/:id" element={<Singl />} />
           <Route path="/blog/:id" element={<SinglBlog />} />
           <Route
