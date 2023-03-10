@@ -1,7 +1,7 @@
 import Layout from "./components/layout/layout";
 import { useContext, useState } from "react";
 import { NavLink, Route, Routes } from "react-router-dom";
-import "./App.css";
+import "./App.scss";
 import { TemaContext } from "./components/context/temaContext";
 import Home from "./pages/Home/home";
 import Blog from "./pages/Blog/blog";
@@ -11,14 +11,17 @@ import About from "./pages/About/about";
 import Karzina from "./pages/Karzina/karzina";
 import { WechatOutlined } from "@ant-design/icons";
 import { FloatButton } from "antd";
-import "./App.css";
 import { Error } from "./pages/Error";
+import Categories from "./pages/Categories";
+import Category from "./pages/Category/category";
+
+
 
 function App() {
   const { tema, setTema } = useContext(TemaContext);
   const [karzina, setKarzina] = useState([]);
+
   
-  console.log(karzina);
   return (
     <div className="App">
       <Layout mode={tema} karzina={karzina}>
@@ -27,8 +30,8 @@ function App() {
           <Route path="/home" element={<Home set={setKarzina} />} />
           <Route path="/about" element={<About />} />
           <Route path="/blog" element={<Blog set={setKarzina} />} />
-          <Route path="category" />
-          <Route path="/category/:id" element={<Singl />} />
+          <Route path="/categories" element={<Categories />} />
+          <Route path="/categories/:id" element={<Category />} />
           <Route path="/blog/:id" element={<SinglBlog />} />
           <Route
             path="/karzina"

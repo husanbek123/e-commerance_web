@@ -1,0 +1,45 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 6%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.164);
+    height: 70px;
+    background-color: white;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+
+
+    .icons {
+        text-align: center;   
+        display: flex;
+        justify-content: flex-end;   
+        width: 10%;  
+        column-gap: 10px;
+
+        .cart {
+            cursor: pointer;
+            font-size: 22px;
+        }
+
+        .lang {
+            width: 80px;
+        }
+    }
+
+
+    .search {
+        width: 40%;
+
+        div {
+            width: 100% !important;
+        }
+    }
+} 
+
+.logo {
+}

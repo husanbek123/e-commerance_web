@@ -1,12 +1,13 @@
 .footer {
   padding: 40px 0;
   background-color: #9dc08b;
+  width: 100%;
 
   &__wrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 50px;
+    margin-bottom: 20px;
   }
 
   &__info {
@@ -44,14 +45,13 @@
   .footer {
     &__wrapper {
       flex-direction: column;
-      gap: 50px;
+      gap: 20px;
     }
   }
 }
 
 @media only screen and (max-width: 700px) {
-  .footer {
-  }
+
   .map {
     width: 600px !important;
     border-radius: 30px;

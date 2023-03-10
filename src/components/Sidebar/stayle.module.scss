@@ -4,12 +4,20 @@ ul {
 }
 
 .bar {
-  background-color: #9dc08b;
-  height: 100vh;
-  width: 250px;
+  width: 200px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  position: fixed;
+  padding-left: 40px;
+  // text-align: start;
+  left: 0;
+  top: 0;
+  min-width: 200px;
+  height: 100vh;
+  // background-color: #a3db87;
+  background-color: white;
+  border-right: 1px solid rgba(0, 0, 0, 0.151);
+
 
   &__list {
     margin-top: 100px;

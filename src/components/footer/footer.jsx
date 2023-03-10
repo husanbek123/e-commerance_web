@@ -1,12 +1,11 @@
 import React from "react";
 import { useDataFetch } from "../hooks/getData.js";
-import "../../App.css";
+import "../../App.scss";
 import cl from "./footer.module.scss";
 export const Footer = () => {
   let { data } = useDataFetch(["information"], "/information");
   const infoData = data?.data[0];
   return (
-    <div>
       <footer className={cl.footer}>
         <div className={cl.container}>
           <div className={cl.footer__wrapper}>
@@ -63,6 +62,5 @@ export const Footer = () => {
           </p>
         </div>
       </footer>
-    </div>
   );
 };

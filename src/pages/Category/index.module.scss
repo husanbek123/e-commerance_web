@@ -1,0 +1,9 @@
+
+
+.category {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    column-gap: 1%;
+    row-gap: 12px;
+
+}
