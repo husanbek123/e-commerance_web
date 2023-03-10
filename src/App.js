@@ -12,6 +12,7 @@ import Karzina from "./pages/Karzina/karzina";
 import { WechatOutlined } from "@ant-design/icons";
 import { FloatButton } from "antd";
 import "./App.css";
+import { Error } from "./pages/Error";
 
 function App() {
   const { tema, setTema } = useContext(TemaContext);
@@ -31,6 +32,7 @@ function App() {
             path="/karzina"
             element={<Karzina blog={karzina} home={karzina} set={setKarzina} />}
           />
+          <Route path="*" element={<Error />} />
         </Routes>
         <NavLink to={"/about"}>
           <FloatButton

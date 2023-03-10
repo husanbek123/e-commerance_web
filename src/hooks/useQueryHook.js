@@ -24,3 +24,14 @@ export const usePostData = (api) => {
     },
   });
 };
+
+export const useGetData = (keys, api, options) => {
+  return useQuery({
+    queryKey: keys,
+    queryFn: async () => {
+      const data = await instance.get(api);
+      return data.data;
+    },
+    options,
+  });
+};
