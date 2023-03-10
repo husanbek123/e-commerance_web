@@ -1,36 +1,60 @@
-import React from "react";
+import { Form, Input, Button } from "antd";
+import React, { useState } from "react";
+import { usePostData } from "../../hooks/useQueryHook";
 import c from "../About/about.module.scss";
 
 function About() {
+  const [data, setData] = useState();
+
+  const PostData = usePostData("/message");
+
+  const onFinish = (e) => {
+    setData(e);
+  };
+
+  let obj = {
+    ...data,
+    status: "PENDING",
+  };
+
+  const sumbitData = () => {
+    PostData.mutate(obj, {
+      onSuccess: (data) => console.log(data, "onSuccess"),
+      onError: (err) => console.log(err, "eror"),
+    });
+  };
+
   return (
-    <div className={c.text}>
-      <p>
-        <span>Simonie Michael</span> (1933–2008) was a Canadian politician from
-        the eastern Northwest Territories (later Nunavut) who was the first Inuk
-        elected to a legislature in Canada. Before becoming involved in
-        politics, Michael worked as a carpenter and business owner, and was one
-        of very few translators between Inuktitut and English. He became a
-        prominent member of the Inuit co-operative housing movement and a
-        community activist in
-        <br />
-        <br />
-        Iqaluit, and was appointed to a series of governing bodies, including
-        the precursor to the Iqaluit City Council. He became the first elected
-        Inuk member of the Northwest Territories Legislative Council in 1966,
-        where he worked on infrastructure and public health initiatives. Michael
-        is
-        <br />
-        <br />
-        credited with bringing public attention to the dehumanizing effects of
-        the disc number system, in which Inuit were assigned alphanumerical
-        identifiers in place of surnames. Michael helped prompt the government
-        to
-        <br />
-        <br />
-        authorise Project Surname, which replaced the disc numbers with names.
-        (Full article...) Recently featured: Hooded pitohuiWaddesdon
-        BequestCyclone Dumazile ArchiveBy emailMore featured articlesAbout
-      </p>
+    <div className={c.form}>
+      <h1>Massage</h1>
+      <Form onFinish={onFinish} className={c.form__wrapper}>
+        <h5 className={c.form__title}>Tel raqamingizni kirting</h5>
+        <Form.Item name="phone">
+          <Input
+            className={c.form__input}
+            placeholder="+998-___-__-__"
+            maxLength={20}
+            allowClear
+          />
+        </Form.Item>
+        <h5 className={c.form__title}>Qanday ish boycha</h5>
+        <Form.Item name="subject">
+          <Input className={c.form__input} placeholder="" allowClear />
+        </Form.Item>
+        <h5 className={c.form__title}>Xabar yozish</h5>
+        <Form.Item name="message">
+          <Input.TextArea className={c.form__input} placeholder="" allowClear />
+        </Form.Item>
+        <Button
+          onClick={sumbitData}
+          htmlType="submit"
+          className={c.form__btn}
+          block
+          type="primary"
+        >
+          Send
+        </Button>
+      </Form>
     </div>
   );
 }

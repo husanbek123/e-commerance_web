@@ -1,14 +1,12 @@
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useMutation } from "@tanstack/react-query";
 import { instance } from "../utils/posturl";
 
-
-const useQueryHook = ({url, options, params, onSelect}) => {
+const useQueryHook = ({ url, options, params }) => {
   return useQuery(
     [url],
     async () => {
       const response = await instance.get(url, { params });
-      // return onSelect ? onSelect(response) : response;
-      return response
+      return response;
     },
     {
       ...options,
@@ -17,3 +15,12 @@ const useQueryHook = ({url, options, params, onSelect}) => {
 };
 
 export default useQueryHook;
+
+export const usePostData = (api) => {
+  return useMutation({
+    mutationFn: async (data) => {
+      const res = await instance.post(api, data);
+      return res;
+    },
+  });
+};

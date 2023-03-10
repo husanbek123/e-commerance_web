@@ -1,15 +1,32 @@
-.text{
-    width: 90%;
-    padding: 2% 0px;
-    margin: 0 auto;
-    p{
-        font-size: 18px;
-        color: inherit;
-        font-weight: 500;
-        span{
-            font-size: 22px;
-            font-weight: 700;
-            color: inherit;
-        }
-    } 
+.form {
+  padding: 100px;
+  display: grid;
+  place-items: center;
+
+  &__wrapper {
+    width: 800px;
+    border: 1px solid #4f6046;
+    padding: 50px;
+    border-radius: 12px;
+  }
+
+  &__input {
+    padding: 8px 20px;
+    border-color: #9dc08b;
+  }
+
+  &__btn {
+    background-color: #9dc08b;
+    &:hover {
+      background-color: #939d8f !important;
+    }
+    &:active {
+      background-color: #4f6046 !important;
+    }
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 20px;
+  }
 }

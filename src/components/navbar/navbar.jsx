@@ -111,21 +111,12 @@ function Navbar({ karzina, mode }) {
                 <NavLink to={"/home"}>Home</NavLink>
               </li>
               <li>
-                <NavLink to={"/about"}>About As</NavLink>
-              </li>
-              <li>
                 <NavLink to={"/blog"}>Blog</NavLink>
               </li>
             </ul>
-            <li>
-              <a href="#">Chat with us</a>
-            </li>
-            <li>
-              <a href="tel:+420 336 775 664">+420 336 775 664</a>
-            </li>
-            <li>
-              <a href="mailto:info@freshnesecom.com">info@freshnesecom.com</a>
-            </li>
+            <div>
+              <h2 className={c.header__logo}>Freshnesecom</h2>
+            </div>
             <li>
               <button
                 onClick={() =>
@@ -137,7 +128,7 @@ function Navbar({ karzina, mode }) {
             </li>
             <div className={c.userAndKarzina2}>
               <NavLink to={"/karzina"}>
-                <i class="fa-solid fa-cart-shopping"></i>
+                <i className="fa-solid fa-cart-shopping"></i>
                 {karzina.length}
               </NavLink>
 
@@ -151,15 +142,11 @@ function Navbar({ karzina, mode }) {
               <NavLink to={"/home"}>Home</NavLink>
             </li>
             <li>
-              <NavLink to={"/about"}>About As</NavLink>
-            </li>
-            <li>
               <NavLink to={"/blog"}>Blog</NavLink>
             </li>
           </ul>
           <div className={c.respons}>
             <div className={c.wra}>
-              <NavLink to={"/"}>Freshnesecom</NavLink>
               <button
                 className={c.btn}
                 onClick={() =>
@@ -179,7 +166,7 @@ function Navbar({ karzina, mode }) {
                 arrow
               >
                 <Button>
-                  AllCategories <i class="fa-solid fa-chevron-down"></i>
+                  AllCategories <i className="fa-solid fa-chevron-down"></i>
                 </Button>
               </Dropdown>
               <label>
@@ -192,15 +179,11 @@ function Navbar({ karzina, mode }) {
             </form>
           </div>
           <label className={c.bar} for="chek">
-            <i class="fa-solid fa-bars"></i>
+            <i className="fa-solid fa-bars"></i>
           </label>
           <label className={c.outbar} for="chek"></label>
         </div>
         <nav>
-          <div className={c.logo}>
-            <NavLink to={"/"}>Freshnesecom</NavLink>
-          </div>
-
           <form className={c.forma}>
             <Dropdown
               className={c.allDrop}
@@ -211,7 +194,7 @@ function Navbar({ karzina, mode }) {
               arrow
             >
               <Button>
-                AllCategories <i class="fa-solid fa-chevron-down"></i>
+                AllCategories <i className="fa-solid fa-chevron-down"></i>
               </Button>
             </Dropdown>
             <label>
@@ -224,7 +207,7 @@ function Navbar({ karzina, mode }) {
           </form>
           <div className={c.userAndKarzina}>
             <NavLink to={"/karzina"}>
-              <i class="fa-solid fa-cart-shopping"></i>
+              <i className="fa-solid fa-cart-shopping"></i>
               {karzina.length}
             </NavLink>
 
@@ -243,7 +226,7 @@ function Navbar({ karzina, mode }) {
             arrow
           >
             <Button>
-              AllCategories <i class="fa-solid fa-chevron-down"></i>
+              AllCategories <i className="fa-solid fa-chevron-down"></i>
             </Button>
           </Dropdown>
           <label>
