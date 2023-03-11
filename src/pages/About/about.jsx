@@ -1,4 +1,4 @@
-import { Form, Input, Button } from "antd";
+import { Form, Input, Button, message } from "antd";
 import React, { useState } from "react";
 import { usePostData } from "../../hooks/useQueryHook";
 import c from "../About/about.module.scss";
@@ -19,8 +19,8 @@ function About() {
 
   const sumbitData = () => {
     PostData.mutate(obj, {
-      onSuccess: (data) => console.log(data, "onSuccess"),
-      onError: (err) => console.log(err, "eror"),
+      onSuccess: (data) => message.success("Xabar yuborld"),
+      onError: (err) => message.error("Xabaringiz intrnet sababli jonatlmad"),
     });
   };
 
