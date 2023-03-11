@@ -1,7 +1,6 @@
 .categories {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    row-gap: 12px;
-    column-gap: 1%;
-    background-color: red;
-} 
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+
+  gap: 20px;
+}
