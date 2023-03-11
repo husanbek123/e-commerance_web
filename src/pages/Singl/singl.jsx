@@ -9,7 +9,7 @@ function Singl() {
   const { data } = useQueryHook({ url: `/products/category/${param.id}` });
   const mydata = data?.data || [];
   console.log(param);
-  console.log(mydata);
+
   return (
     <div className={c.singlecateg}>
       {/* <h1>Single page</h1> */}

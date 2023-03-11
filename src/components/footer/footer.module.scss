@@ -15,10 +15,17 @@
     flex-direction: column;
     gap: 5px;
     font-size: 20px;
+    row-gap: 20px;
   }
 
   &__map {
     border-radius: 12px;
+    width: 100%;
+    
+
+    iframe {
+      width: 100%;
+    }
   }
 
   &__folder {
@@ -51,9 +58,8 @@
 }
 
 @media only screen and (max-width: 700px) {
-
-  .map {
-    width: 600px !important;
-    border-radius: 30px;
-  }
+  // .map {
+  //   width: 600px !important;
+  //   border-radius: 30px;
+  // }
 }

@@ -31,3 +31,13 @@
         }
     }
 }
+
+
+@media (max-width: 500px) {
+    .sBlog {
+        .wrap {
+            flex-direction: column;
+        } 
+
+    }
+}

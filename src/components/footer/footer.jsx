@@ -2,9 +2,13 @@ import React from "react";
 import { useDataFetch } from "../hooks/getData.js";
 import "../../App.scss";
 import cl from "./footer.module.scss";
+import parse from 'html-react-parser'
 export const Footer = () => {
-  let { data } = useDataFetch(["information"], "/information");
+  let { data, isLoading } = useDataFetch(["information"], "/information");
   const infoData = data?.data[0];
+
+
+
   return (
       <footer className={cl.footer}>
         <div className={cl.container}>
@@ -54,8 +58,13 @@ export const Footer = () => {
             </div>
             <div
               className={cl.map}
-              dangerouslySetInnerHTML={{ __html: infoData?.addressMap }}
-            ></div>
+              // dangerouslySetInnerHTML={{ __html: infoData?.addressMap }}
+
+            >
+              {
+                infoData?.addressMap ? parse(infoData?.addressMap) : "No Info"
+              }
+            </div>
           </div>
           <p className={cl.text}>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Commodi

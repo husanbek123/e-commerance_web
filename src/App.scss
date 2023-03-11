@@ -17,6 +17,22 @@
   }
 }
 
+.link {
+  display: flex;
+}
+
+.activeLink {
+  position: relative;
+  &::before {
+    content: '';
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    left: 0;
+    top: 90%;
+    background-color: #666666d6;
+  }
+}
 
 button {
   cursor: pointer;

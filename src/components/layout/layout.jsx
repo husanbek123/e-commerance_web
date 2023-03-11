@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "../navbar";
 import { Footer } from "../footer/footer";
 import { TemaContext } from "../context/temaContext";
@@ -15,26 +15,29 @@ function Layout({ karzina, mode, children }) {
   const { tema, setTema } = useContext(TemaContext);
   let {currentLang} = useMyStore((state) => state)
   let {data: categories} = useGetData(['categories'], "/category")
-
   let loc = useLocation()
+
+  let [isMenuOpen, setIsMenuOpen] = useState(false) 
+
   return (
     <div className={styles.layout}>
-      <Navbar lang={currentLang} />
+      <Navbar lang={currentLang} value={isMenuOpen} func={setIsMenuOpen} />
       <div className={styles.middle}>
         {
           loc.pathname != "/" &&
           <div className={styles.sidebar}>
-            <Sidebar categories={categories?.data} lang={currentLang} />
+            <div onClick={() => setIsMenuOpen(false)} className={[styles.closeMenu, isMenuOpen && styles.open].join(" ")}></div>
+            <Sidebar value={isMenuOpen} categories={categories?.data} lang={currentLang} />
           </div>
         }
-        <div className={styles.right}>
+        <div className={loc.pathname == "/" ? styles.full_right : styles.right}>
           {
             loc.pathname != "/" ? <div className={styles.children}>
             {children}
             </div>
             :
             children
-          }
+          } 
           <Footer />
         </div>
       </div>

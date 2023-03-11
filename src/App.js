@@ -14,6 +14,7 @@ import { FloatButton } from "antd";
 import { Error } from "./pages/Error";
 import Categories from "./pages/Categories";
 import Category from "./pages/Category/category";
+import Products from "./pages/Products";
 
 
 
@@ -32,7 +33,8 @@ function App() {
           <Route path="/blog" element={<Blog set={setKarzina} />} />
           <Route path="/categories" element={<Categories />} />
           <Route path="/categories/:id" element={<Category />} />
-          <Route path="/blog/:id" element={<SinglBlog />} />
+          <Route path="/products/:id" element={<SinglBlog />} />
+          <Route path="/products/" element={<Products />} />
           <Route
             path="/karzina"
             element={<Karzina blog={karzina} home={karzina} set={setKarzina} />}

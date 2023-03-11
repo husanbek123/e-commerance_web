@@ -25,6 +25,7 @@ function Category() {
             title={item[`name_${currentLang}`]}
             desc={item[`description_${currentLang}`]}
             price={item.price}
+            id={item.id}
           />
         ))
         : 

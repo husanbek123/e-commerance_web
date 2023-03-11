@@ -14,6 +14,13 @@
     z-index: 1;
 
 
+    .main {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+    }
+
     .icons {
         text-align: center;   
         display: flex;
@@ -39,7 +46,41 @@
             width: 100% !important;
         }
     }
+
+    .search_part {
+        display: none;
+    }
 } 
 
-.logo {
+
+@media (max-width: 800px) {
+    .navbar {
+        flex-direction: column;
+        justify-content: center;
+        row-gap: 12px;
+        padding: 10px 6%;
+        .main {
+            border-bottom: 1px solid rgba(0, 0, 0, 0.415);
+            padding-bottom:  10px;
+
+            .search {
+                display: none;
+            }
+        }
+        height: auto;
+        .search_part {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .search {
+                width: 85%;
+            }
+            .menuIcon {
+                cursor: pointer;
+                font-size: 22px;
+            }
+        }
+    }
 }
