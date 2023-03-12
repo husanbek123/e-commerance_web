@@ -1,10 +1,11 @@
-import { Button } from 'antd'
-import React from 'react'
-import { useNavigate } from 'react-router-dom'
-import styles from './index.module.scss'
+import { Button } from "antd";
+import React, { useContext } from "react";
+import { useNavigate } from "react-router-dom";
+import styles from "./index.module.scss";
 
-function Product({title, desc, img, price, id}) {
-  let navigate = useNavigate()
+function Product({ title, desc, img, price, id, btn }) {
+  let navigate = useNavigate();
+
   return (
     <div className={styles.product}>
       <div className={styles.product_img}>
@@ -15,12 +16,13 @@ function Product({title, desc, img, price, id}) {
         <h6>Price: {price}$</h6>
         <p>{desc?.slice(0, 100) + ".."}</p>
         <div className={styles.btns}>
-          <button>Buy</button>
-          <Button type='primary' onClick={() => navigate(`/products/${id}`)}>More</Button>
+          <Button type="primary" onClick={() => navigate(`/products/${id}`)}>
+            More
+          </Button>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Product
+export default Product;

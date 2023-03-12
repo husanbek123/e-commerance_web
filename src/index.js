@@ -26,9 +26,7 @@ root.render(
       <QueryClientProvider client={queryClient}>
         <KarzinaProvider>
           <ContextProvider>
-            {/* <UserProvider> */}
             <App />
-            {/* </UserProvider> */}
           </ContextProvider>
         </KarzinaProvider>
       </QueryClientProvider>

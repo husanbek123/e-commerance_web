@@ -10,8 +10,12 @@
   justify-content: center;
   align-items: center;
   animation: fadeIn 1s ease-in;
-  padding: 0 0 30px;
+  padding: 0 50px;
   text-align: center;
+
+  &__box {
+    margin: 100px 0;
+  }
 
   &-title {
     font-size: 3rem;
@@ -30,7 +34,7 @@
     border-radius: 0.5rem;
     background-color: #9dc08b;
     color: #fff;
-
+    margin-bottom: 100px;
     cursor: pointer;
     transition: background-color 0.5s ease-in-out;
 
@@ -63,19 +67,14 @@
   width: 100% !important;
   height: 300px;
 
-
   div {
-
     width: 100% !important;
     height: 100%;
   }
 }
 
 .Carusel__wrapper {
-  // margin-top: 40px;
   width: 100%;
-  height: 300px;
-
   div {
     width: 100%;
     height: 100%;

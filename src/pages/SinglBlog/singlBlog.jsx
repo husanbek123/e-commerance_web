@@ -4,57 +4,69 @@ import useMyStore from "../../components/context/Store";
 import { useDataFetch } from "../../components/hooks/getData";
 import { useGetData } from "../../hooks/useQueryHook";
 import c from "../SinglBlog/singlBlog.module.scss";
+import { KarzinaContext } from "../../components/context/karzina";
+import { useContext } from "react";
+import { Loader } from "../../components/Loader";
 
 function SinglBlog() {
   const { id } = useParams();
   let { currentLang } = useMyStore((state) => state);
   const singlBlogProduct = useDataFetch(["products", id], `/products/${id}`);
-  // console.log(singlBlogProduct.data, "products");
-  // console.log(singlBlogProduct);
   let { data: products, isLoading } = useGetData(["products"], "/products");
   let currentProduct = products?.data?.filter(
     (item) => item.id == singlBlogProduct?.data?.id
   );
-  console.log(currentProduct, "2222222222222");
+  const { karzina, setKarzina } = useContext(KarzinaContext);
+
+  console.log(singlBlogProduct.data, "information");
 
   return (
-    <div className={c.sBlog}>
-      <div className={c.wrap}>
-        <div className={c.img}>
+    <div className={c.blog}>
+      <div className={c.blog__wrapper}>
+        <div className={c.blog__imgbox}>
           {isLoading ? (
-            "Loading"
+            <Loader />
           ) : (
             <img
+              className={c.blog__img}
               src={`http://3.19.30.204/upload/${currentProduct?.photo?.path}`}
               alt="img"
             />
           )}
         </div>
-        <div className={c.text}>
-          <p>
+        <div className={c.blog__info}>
+          <p className={c.blog__text}>
             <span>Name:</span>
             {products?.data?.find((item) => item.id == id)[`name_Uz`]}
           </p>
-          <p>
-            <span>Id:</span>
-            {singlBlogProduct?.data?.id}
-          </p>
-          <p>
-            <span>Color:</span>
-            {singlBlogProduct?.data?.color}
-          </p>
-          <p>
+          <p className={c.blog__text}>
             <span>Size:</span>
             {singlBlogProduct?.data?.size}
           </p>
-          <p>
-            <span>Price:</span>
-            {singlBlogProduct?.data?.price}
+          <p className={c.blog__text}>
+            <span>Gender :</span> {singlBlogProduct?.data?.gender}
           </p>
+          <div className={c.blog__detel}>
+            <p className={c.blog__text}>
+              <span>Price:</span>
+              {singlBlogProduct?.data?.price}
+            </p>
+            <div style={{ display: "flex", alignItems: "center", gap: "20px" }}>
+              <span className={c.blog__text}>Color</span>
+              <p
+                className={c.blog__color}
+                style={{ backgroundColor: `${singlBlogProduct?.data?.color}` }}
+              ></p>
+            </div>
+          </div>
+          <button
+            className={c.blog__btn}
+            onClick={() => setKarzina((e) => [...e, singlBlogProduct?.data])}
+          >
+            Buy
+          </button>
         </div>
       </div>
-
-      {/* <img src={singlBlogProduct?.data?.Category?.photoId} alt="" /> */}
     </div>
   );
 }

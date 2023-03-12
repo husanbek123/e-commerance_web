@@ -4,13 +4,17 @@ import { Carousel } from "antd";
 import { useNavigate } from "react-router-dom";
 
 const Home = () => {
-  let navigate = useNavigate()
+  let navigate = useNavigate();
   return (
     <div className="homepage">
-      <div
-        className="Carusel__wrapper"
-      >
-        <Carousel autoplay dots={true} pauseOnHover dotPosition={"right"}>
+      <div className="Carusel__wrapper">
+        <Carousel
+          className="homepage__box"
+          autoplay
+          dots={true}
+          pauseOnHover
+          dotPosition={"right"}
+        >
           <div className="carousel-item">
             <h2 style={{ color: "white", lineHeight: "300px" }}>
               "Shop Savvy: Your One-Stop Online Marketplace"
@@ -41,7 +45,12 @@ const Home = () => {
         consectetur, purus nulla hendrerit ipsum, sit amet pretium tellus augue
         id lectus. Nulla facilisi.
       </p>
-      <button className="homepage-button" onClick={() => navigate("/categories")}>Learn More</button>
+      <button
+        className="homepage-button"
+        onClick={() => navigate("/categories")}
+      >
+        Learn More
+      </button>
     </div>
   );
 };

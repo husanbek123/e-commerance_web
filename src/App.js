@@ -16,21 +16,18 @@ import Categories from "./pages/Categories";
 import Category from "./pages/Category/category";
 import Products from "./pages/Products";
 
-
-
 function App() {
   const { tema, setTema } = useContext(TemaContext);
   const [karzina, setKarzina] = useState([]);
 
-  
   return (
     <div className="App">
       <Layout mode={tema} karzina={karzina}>
         <Routes>
-          <Route path="/" element={<Home set={setKarzina} />} />
-          <Route path="/home" element={<Home set={setKarzina} />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/blog" element={<Blog set={setKarzina} />} />
+          <Route path="/blog" element={<Blog />} />
           <Route path="/categories" element={<Categories />} />
           <Route path="/categories/:id" element={<Category />} />
           <Route path="/products/:id" element={<SinglBlog />} />

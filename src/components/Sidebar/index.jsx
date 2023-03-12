@@ -16,7 +16,6 @@ export const Sidebar = ({ value, categories, lang }) => {
   let loc = useLocation();
 
   let direction = loc.pathname.replace("/categories/", "");
-  console.log(loc.pathname, "111111111111111111111");
   return (
     <div className={[cl.bar, value == true && cl.open].join(" ")}>
       <div className={cl.bar__list}>
@@ -31,7 +30,7 @@ export const Sidebar = ({ value, categories, lang }) => {
           </p>
         </Link>
         {categories?.map((item) => (
-          <Link className="link" to={`/categories/${item.id}`}>
+          <Link key={item.id} className="link" to={`/categories/${item.id}`}>
             <p className={item.id == direction && "activeLink"}>
               {item[`name_${lang}`]}
             </p>

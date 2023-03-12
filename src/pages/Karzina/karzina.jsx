@@ -1,32 +1,14 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import d from "../Karzina/karzina.module.scss"
+import React, { useContext } from "react";
+import d from "../Karzina/karzina.module.scss";
+import { KarzinaContext } from "../../components/context/karzina";
 
-function Karzina({ blog }) {
+function Karzina() {
+  const { karzina } = useContext(KarzinaContext);
+
+  console.log(karzina);
   return (
-    <div className={d.kar}>
-      <div className={d.cars}>
-        {blog?.map((p) => (
-          <div className={d.car}>
-            
-            <img src="https://picsum.photos/300/350" alt="#" />
-            <p>{p.id}</p>
-            <p>
-              <span>Color:</span>
-              {p?.color}
-            </p>
-            <p>
-              <span>price:</span>
-              {p?.price}
-            </p>
-            <p>
-              <span>size:</span>
-              {p?.size}
-            </p>
-
-          </div>
-        ))}
-      </div>
+    <div>
+      <h1>Karzinka page</h1>
     </div>
   );
 }
