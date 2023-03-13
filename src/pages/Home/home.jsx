@@ -47,7 +47,7 @@ const Home = () => {
       </p>
       <button
         className="homepage-button"
-        onClick={() => navigate("/categories")}
+        onClick={() => navigate("/products")}
       >
         Learn More
       </button>
