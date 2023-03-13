@@ -3,7 +3,7 @@ import "./stayle.css";
 
 export const Loader = () => {
   return (
-    <div class="spinner">
+    <div className="spinner">
       <div></div>
       <div></div>
       <div></div>
