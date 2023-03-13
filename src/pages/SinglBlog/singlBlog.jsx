@@ -13,6 +13,7 @@ function SinglBlog() {
   let { currentLang } = useMyStore((state) => state);
   const singlBlogProduct = useDataFetch(["products", id], `/products/${id}`);
   let { data: products, isLoading } = useGetData(["products"], "/products");
+
   let currentProduct = products?.data?.filter(
     (item) => item.id == singlBlogProduct?.data?.id
   );
@@ -29,7 +30,7 @@ function SinglBlog() {
           ) : (
             <img
               className={c.blog__img}
-              src={`http://3.19.30.204/upload/${currentProduct?.photo?.path}`}
+              src={`http://3.19.30.204/upload/${currentProduct[0]?.photo?.path}`}
               alt="img"
             />
           )}
@@ -37,7 +38,7 @@ function SinglBlog() {
         <div className={c.blog__info}>
           <p className={c.blog__text}>
             <span>Name:</span>
-            {products?.data?.find((item) => item.id == id)[`name_Uz`]}
+            {products?.data?.find((item) => item.id == id)[`name_${currentLang}`]}
           </p>
           <p className={c.blog__text}>
             <span>Size:</span>
