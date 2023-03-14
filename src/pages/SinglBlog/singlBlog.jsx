@@ -62,7 +62,10 @@ function SinglBlog() {
           </div>
           <button
             className={c.blog__btn}
-            onClick={() => setKarzina((e) => [...e, singlBlogProduct?.data])}
+            onClick={() => setKarzina((e) => [...e, {
+              ...singlBlogProduct?.data,
+              uid: Math.round(Math.random() * 10000) 
+            }])}
           >
             Buy
           </button>
