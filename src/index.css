@@ -37,5 +37,12 @@ code {
   border-color: rgb(0, 0, 0);
 }
 .active {
-  color: rgb(252, 0, 0);
+  padding: 5px 10px;
+  background-color: aliceblue;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  font-weight: 700;
+  text-decoration: none !important;
+  text-transform: capitalize;
+  border: 2px solid black;
 }

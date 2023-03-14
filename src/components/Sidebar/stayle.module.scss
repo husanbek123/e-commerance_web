@@ -1,4 +1,5 @@
-ul, p {
+ul,
+p {
   margin: 0;
   padding: 0;
 }
@@ -8,21 +9,16 @@ ul, p {
   display: flex;
   flex-direction: column;
   position: fixed;
-  padding-left: 40px;
+  padding: 0 20px;
   left: 0;
   top: 70px;
   height: 100vh;
   background-color: #a3db87;
-  // text-align: start;
-  // min-width: 20vw;
-  // background-color: white;
-  // max-width: 150px;
-  border-right: 1px solid rgba(0, 0, 0, 0.151);
   min-width: 150px;
   z-index: 99;
+  overflow-y: scroll;
 
-
-  &__list { 
+  &__list {
     margin-top: 100px;
     display: flex;
     flex-direction: column;
@@ -39,4 +35,8 @@ ul, p {
   .open {
     left: 0 !important;
   }
+}
+
+.bar::-webkit-scrollbar {
+  width: 0;
 }
